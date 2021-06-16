@@ -1,16 +1,64 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+:root {
+	--border-radius: 5px;
 }
 
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
+	font-size: 62.5%;
+	box-sizing: border-box;
 }
 
 body {
-  font-size: 1.6rem;
+	font-size: 1.6rem;
+	font-family: 'Poppins', sans-serif;
+	background-color: #eee;
+}
+
+h1 {
+	color: rgb(77, 63, 165);
+	text-align: center;
+	margin-bottom: 5rem;
+}
+
+.list {
+	border-radius: var(--border-radius);
+	list-style: none;
+	background-color: rgb(77, 63, 165);
+	width: 90%;
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 3rem;
+}
+
+.list__item {
+	background-color: rgb(65, 54, 139);
+	border-radius: var(--border-radius);
+	padding: 2rem;
+}
+
+.list__item-name {
+	color: #eee;
+}
+
+.list__item-age,
+.list__item-note {
+	color: rgb(228, 228, 228);
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+.list__item-age {
+	margin-bottom: 1rem;
+	opacity: 0.8;
+}
+
+.list__item:not(:last-child) {
+	margin-bottom: 1.5rem;
 }
