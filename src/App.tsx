@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Form from './components/Form';
 import List from './components/List';
 import data from './data.js';
 
@@ -15,6 +16,7 @@ function App() {
 		<div className="App">
 			<h1>People Invited To My Party</h1>
 			<List people={people} />
+			<Form />
 		</div>
 	);
 }

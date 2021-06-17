@@ -7,6 +7,9 @@
 }
 
 :root {
+	--color-primary: rgb(77, 63, 165);
+	--color-primary-dark: rgb(62, 50, 133);
+	--color-primary-light: rgb(91, 75, 196);
 	--border-radius: 5px;
 }
 
@@ -19,26 +22,50 @@ body {
 	font-size: 1.6rem;
 	font-family: 'Poppins', sans-serif;
 	background-color: #eee;
+	padding-bottom: 4rem;
 }
 
 h1 {
-	color: rgb(77, 63, 165);
 	text-align: center;
-	margin-bottom: 5rem;
+	margin: 3rem 0;
+	font-size: 4rem;
+	color: var(--color-primary);
 }
+
+h2 {
+	color: var(--color-primary);
+	font-size: 3rem;
+}
+
+.btn {
+	border: none;
+	font-size: 1.8rem;
+	padding: 1rem 2rem;
+	border-radius: var(--border-radius);
+	background-color: var(--color-primary);
+	color: #eee;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.btn:hover {
+	background-color: var(--color-primary-light);
+}
+
+/* List */
 
 .list {
 	border-radius: var(--border-radius);
 	list-style: none;
-	background-color: rgb(77, 63, 165);
+	background-color: var(--color-primary);
 	width: 90%;
 	max-width: 60rem;
-	margin: 0 auto;
+	margin: 0 auto 3rem auto;
 	padding: 3rem;
 }
 
 .list__item {
-	background-color: rgb(65, 54, 139);
+	background-color: var(--color-primary-dark);
 	border-radius: var(--border-radius);
 	padding: 2rem;
 }
@@ -61,4 +88,47 @@ h1 {
 
 .list__item:not(:last-child) {
 	margin-bottom: 1.5rem;
+}
+
+/* Form */
+
+.form {
+	border-radius: var(--border-radius);
+	background-color: rgb(228, 228, 228);
+	width: 90%;
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 2.2rem 3rem 3rem 3rem;
+}
+
+.form__title {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.form__inputs {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.5rem;
+}
+
+.form__label {
+	color: var(--color-primary-dark);
+	font-weight: 700;
+	font-size: 1.7rem;
+	margin-bottom: 0.5rem;
+}
+
+.form__input-box {
+	padding: 1.5rem;
+	border: none;
+	border-radius: var(--border-radius);
+	background-color: hsl(0, 3%, 96%);
+	outline: none;
+	margin-bottom: 2rem;
+	font-size: 1.5rem;
+}
+
+.form__input-box:focus {
+	box-shadow: 0 0 0 1px inset rgb(62, 50, 133);
 }
