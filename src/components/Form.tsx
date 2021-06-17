@@ -1,12 +1,33 @@
 import { useState } from 'react';
 import InputField from './InputField';
+import { IPerson } from '../App';
+import { v4 } from 'uuid';
 
-export default function Form() {
+interface FormProps {
+	people: IPerson[];
+	setPeople: React.Dispatch<React.SetStateAction<IPerson[]>>;
+}
+
+export default function Form({ people, setPeople }: FormProps) {
 	const [name, setName] = useState('');
 	const [age, setAge] = useState('');
 	const [note, setNote] = useState('');
+
+	function clearInputs() {
+		setName('');
+		setAge('');
+		setNote('');
+	}
+
+	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault();
+		if (!name || !age) return;
+		const newPerson: IPerson = { id: v4(), name, age: Number.parseFloat(age), note };
+		setPeople([...people, newPerson]);
+		clearInputs();
+	}
 	return (
-		<form className="form">
+		<form className="form" onSubmit={handleSubmit}>
 			<h2 className="form__title">Add Person</h2>
 			<div className="form__inputs">
 				<InputField
@@ -22,7 +43,7 @@ export default function Form() {
 				<InputField
 					label="Age*"
 					name="age"
-					type="text"
+					type="number"
 					required={true}
 					value={age}
 					setValue={setAge}

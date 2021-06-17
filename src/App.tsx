@@ -4,7 +4,7 @@ import List from './components/List';
 import data from './data.js';
 
 export interface IPerson {
-	id: number;
+	id: number | string;
 	name: string;
 	age: number;
 	note?: string;
@@ -16,7 +16,7 @@ function App() {
 		<div className="App">
 			<h1>People Invited To My Party</h1>
 			<List people={people} />
-			<Form />
+			<Form people={people} setPeople={setPeople} />
 		</div>
 	);
 }

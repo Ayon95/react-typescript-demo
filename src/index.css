@@ -130,5 +130,5 @@ h2 {
 }
 
 .form__input-box:focus {
-	box-shadow: 0 0 0 1px inset rgb(62, 50, 133);
+	box-shadow: 0 0 0 1.5px inset rgb(62, 50, 133);
 }
