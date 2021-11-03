@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from './components/Form';
 import List from './components/List';
-import data from './data.js';
+import data from './data';
 import { Person } from './definitions';
 
 function App() {
