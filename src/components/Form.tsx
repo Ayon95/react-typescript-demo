@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import InputField from './InputField';
-import { IPerson } from '../App';
 import { v4 } from 'uuid';
+import { Person } from '../definitions';
 
-interface FormProps {
-	people: IPerson[];
-	setPeople: React.Dispatch<React.SetStateAction<IPerson[]>>;
-}
+type Props = {
+	people: Person[];
+	setPeople: React.Dispatch<React.SetStateAction<Person[]>>;
+};
 
-export default function Form({ people, setPeople }: FormProps) {
+export default function Form({ people, setPeople }: Props) {
 	const [name, setName] = useState('');
 	const [age, setAge] = useState('');
 	const [note, setNote] = useState('');
@@ -22,7 +22,7 @@ export default function Form({ people, setPeople }: FormProps) {
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		if (!name || !age) return;
-		const newPerson: IPerson = { id: v4(), name, age: Number.parseFloat(age), note };
+		const newPerson: Person = { id: v4(), name, age: Number.parseFloat(age), note };
 		setPeople([...people, newPerson]);
 		clearInputs();
 	}

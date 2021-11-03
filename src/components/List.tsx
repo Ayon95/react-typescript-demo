@@ -1,10 +1,10 @@
-import { IPerson } from '../App';
+import { Person } from '../definitions';
 
-interface ListProps {
-	people: IPerson[];
-}
+type Props = {
+	people: Person[];
+};
 
-export default function List({ people }: ListProps) {
+export default function List({ people }: Props) {
 	return (
 		<ul className="list">
 			{people.map(person => (

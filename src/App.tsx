@@ -2,19 +2,13 @@ import { useState } from 'react';
 import Form from './components/Form';
 import List from './components/List';
 import data from './data.js';
-
-export interface IPerson {
-	id: number | string;
-	name: string;
-	age: number;
-	note?: string;
-}
+import { Person } from './definitions';
 
 function App() {
-	const [people, setPeople] = useState<IPerson[]>(data);
+	const [people, setPeople] = useState<Person[]>(data);
 	return (
 		<div className="App">
-			<h1>People Invited To My Party</h1>
+			<h1>Chelsea Players</h1>
 			<List people={people} />
 			<Form people={people} setPeople={setPeople} />
 		</div>

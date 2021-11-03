@@ -1,4 +1,4 @@
-interface InputFieldProps {
+type Props = {
 	label: string;
 	name: string;
 	type: 'text' | 'number' | 'email';
@@ -6,9 +6,9 @@ interface InputFieldProps {
 	placeholder: string;
 	value: string;
 	setValue: React.Dispatch<React.SetStateAction<string>>;
-}
+};
 
-export default function InputField(props: InputFieldProps) {
+export default function InputField(props: Props) {
 	return (
 		<>
 			<label htmlFor={props.name} className="form__label">
